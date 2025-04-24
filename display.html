@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Real-Time Sensor Data Display</title>
+
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    th, td {
+      border: 1px solid black;
+      padding: 8px;
+      text-align: left;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+  </style>
+  <link rel="stylesheet" href="display.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
+
+  <script>
+    $(document).ready(function() {
+      // Function to fetch data from server using long polling
+      function fetchDataLongPolling() {
+        $.ajax({
+          url: 'fetch_data.php', 
+          type: 'GET',
+          dataType: 'json',
+          success: function(data) {
+            console.log('Received data:', data); // Log received data to console
+            // Update webpage content with fetched data
+            $('#temperature').text(data.temperature + ' °C');
+            $('#moisture').text(data.moisture + ' gm3'); 
+            $('#methane').text(data.methane + ' ppm'); // Updated to methane
+            $('#co2').text(data.co2 + ' ppm'); // Added CO2 display
+            $('#timestamp').text(data.timestamp);  
+            var spoiltStatus = data.spoilt ? 'Spoilt' : 'Not Spoilt';
+            $('#spoiltStatus').text(spoiltStatus);
+            
+            // Start next long polling request
+            fetchDataLongPolling();
+          },
+          error: function(xhr, status, error) {
+            console.log('Error fetching data');
+            // Retry long polling after a delay
+            setTimeout(fetchDataLongPolling, 10000); // Retry after 10 seconds
+          }
+        });
+      }
+
+      // Start initial long polling request
+      fetchDataLongPolling();
+    });
+  </script>
+
+  <header>
+    <div class="logo">Anna<b style="color: #06C167;">Mrita</b></div>
+    <div class="hamburger">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
+    <nav class="nav-bar">
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="profile.php">Profile</a></li>
+        <li><a href="fooddonateform.php">Donate</a></li>
+        <li><a href="display.html" class="active">Sensor Data</a></li>
+        <li><a href="http://127.0.0.1:5000">Prediction</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <script>
+    hamburger = document.querySelector(".hamburger");
+    hamburger.onclick = function() {
+      navBar = document.querySelector(".nav-bar");
+      navBar.classList.toggle("active");
+    }
+  </script>
+
+</head>
+<body>
+
+<h1>Real-Time Sensor Data</h1>
+
+<table>
+  <tr>
+    <th>Sensor</th>
+    <th>Latest Value</th>
+  </tr>
+  <tr>
+    <td>Temperature</td>
+    <td id="temperature">Loading...</td>
+  </tr>
+  <tr>
+    <td>Moisture</td>
+    <td id="moisture">Loading...</td>
+  </tr>
+  <tr>
+    <td>Methane</td>
+    <td id="methane">Loading...</td>
+  </tr>
+  <tr>
+    <td>CO₂</td>
+    <td id="co2">Loading...</td>
+  </tr>
+  <tr>
+    <td>Spoilt Status</td>
+    <td id="spoiltStatus">Loading...</td>
+  </tr>
+  <tr>
+    <td>Last Updated</td>
+    <td id="timestamp">N/A</td>
+  </tr>
+</table>
+
+</body>
+</html>

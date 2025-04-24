@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="about.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Anna<b style="color: #06C167;">Mrita</b></div>
+        <div class="hamburger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <nav class="nav-bar">
+            <ul>
+                <li><a href="home.html" >Home</a></li>
+                <li><a href="#about" class="active" >About</a></li>
+                <li><a href="contact.html" >Contact</a></li>
+                <li><a href="profile.php" >Profile</a></li>
+                <li ><a href="fooddonateform.php"  >Donate</a></li>
+                <li ><a href="display.html"  >Sensor data</a></li>
+                <li ><a href="http://127.0.0.1:5000">Prediction</a></li>
+            </ul>
+        </nav>
+    </header>
+    <script>
+        hamburger=document.querySelector(".hamburger");
+        hamburger.onclick =function(){
+            navBar=document.querySelector(".nav-bar");
+            navBar.classList.toggle("active");
+        }
+    </script>
+    <style>
+       
+        
+        .coverc{
+          width: 100%;
+          height: 400px;
+          background:url('img/about3.jpg')no-repeat;
+    background-size: cover;
+    display: grid;
+    place-items:center;
+    padding-top: 8rem;
+ 
+        } 
+        .title{
+          font-size: 38px;
+          text-align: center;
+          align-items: center; 
+        }
+       
+        .para p{
+            font-size: 23px;
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+          @media (max-width: 767px) {
+            .para p{
+               font-size: 16px;
+               /* margin-left: 10px; */
+              }
+            #pptslide{
+                height: 200px;
+                width: 300px;
+
+            }
+            #map{
+              height: 200px;
+                width: 300px;
+
+
+            }
+            #overview{
+              height: 200px;
+                width: 300px;
+            }
+            
+        .title{
+          font-size: 28px;
+          margin: 10px;
+          text-align: center;
+          align-items: center; 
+        }
+       
+
+          }
+     
+    </style>
+    <br>
+    <br>
+    <!-- <section class="coverc">
+        
+    
+    </section> -->
+    <p class="title">"Welcome to <u> AnnaMrita</u>"</p>
+    <br>
+    <br>
+    <br>
+        <p class="heading">About us</p>
+        
+      
+        <!-- <br> -->
+      <div class="para">
+        <!-- <p>"Welcome to Food Donate, India's largest and most trusted donating platform that connects donors to verified nonprofits. FoodDonate helps you become a ray of hope for people in need. Choose a cause that is close to your heart and join hands with millions of donors like you who aim to make this world a better place."</p> -->
+      
+        <p>We are a team of passionate individuals committed to addressing the issue of food waste in India. Our goal is to create a system that connects food donors with charities and NGOs, while also reducing the environmental impact of food waste.</p>
+      </div>
+      <br>
+ 
+      
+    
+      <br>
+      
+
+
+<div class="map"  style="  text-align: center; padding-bottom: 50px;" >
+<p  style=" font-size:30px ;" > Location  </p>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3765.589242193555!2d72.8736576749598!3d19.30022094489568!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b01633d596dd%3A0x5846eeeb84dd563f!2sShree%20L%20R%20Tiwari%20College%20of%20Engineering!5e0!3m2!1sen!2sin!4v1697724438787!5m2!1sen!2sin" width="777" height="473" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" id="map"></iframe>
+     </div>
+
+
+<p class="heading">Our Story</p>
+     <div class="para">
+       <p>Our journey began with a realization that food waste is a significant problem in India. According to a report by the United Nations, India is the world's second-largest food producer, yet it also has one of the highest rates of food waste. This waste has a significant impact on the environment, as well as on food security in the country.</p>
+     </div> 
+      
+     <section class="team">
+      <div class="center">
+        <h1>Our Team</h1>
+      </div>
+  
+      <div class="team-content">
+        <div class="box">
+          <img src="./img/01.png">
+          <h3> Tungekar Mohammed Kaif</h3>
+          <h5>Student</h5>
+          <div class="icons">
+            <a href="#"><i class="ri-twitter-fill"></i></a>
+            <a href="#"><i class="ri-facebook-box-fill"></i></a>
+            <a href="#"><i class="ri-instagram-fill"></i></a>
+          </div>
+        </div>
+  
+        <div class="box">
+          <img src="./img/02.png">
+          <h3>Vinayak Vishwakarma</h3>
+          <h5>Student</h5>
+          <div class="icons">
+            <a href="#"><i class="ri-twitter-fill"></i></a>
+            <a href="#"><i class="ri-facebook-box-fill"></i></a>
+            <a href="#"><i class="ri-instagram-fill"></i></a>
+          </div>
+        </div>
+  
+        <div class="box">
+          <img src="./img/03.png">
+          <h3>Ankit Yadav</h3>
+          <h5>Student</h5>
+          <div class="icons">
+            <a href="#"><i class="ri-twitter-fill"></i></a>
+            <a href="#"><i class="ri-facebook-box-fill"></i></a>
+            <a href="#"><i class="ri-instagram-fill"></i></a>
+          </div>
+        </div>
+  
+        <div class="box">
+          <img src="./img/04.png">
+          <h3>Tejas Yadav</h3>
+          <h5>Student</h5>
+          <div class="icons">
+            <a href="#"><i class="ri-twitter-fill"></i></a>
+            <a href="#"><i class="ri-facebook-box-fill"></i></a>
+            <a href="#"><i class="ri-instagram-fill"></i></a>
+          </div>
+        </div>
+  
+      </div>
+    </section>
+
+
+</body>
+</html>
